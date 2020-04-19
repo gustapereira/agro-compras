@@ -1,0 +1,6 @@
+export default {
+  HEADLINE: 20,
+  TITLE: 16,
+  DESCRIPTION: 14,
+  SUBDESCRIPTION: 12,
+};
