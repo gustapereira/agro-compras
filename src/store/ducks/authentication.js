@@ -17,6 +17,6 @@ export default (state = INITIAL_STATE, action) => {
   }
 };
 
-export const login = () => async (dispatch) => {
+export const login = () => async () => {
   //  Login functon
 };
