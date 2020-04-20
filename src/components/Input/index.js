@@ -5,77 +5,58 @@ import { TextInputMask } from 'react-native-masked-text';
 import styles from './styles';
 
 
-const Input = React.forwardRef(({
-  mask, optionsMask, inputColor, onChangeText, value, placeholder, placeholderTextColor, title
-}, ref) => {
-  function teste() {
-
-  }
-
-  return (
-    <View>
-      <Text style={styles.title}>{title}</Text>
-      {mask
+const Input = React.forwardRef((props, ref) => (
+  <View>
+    <Text style={styles.title}>{props.title}</Text>
+    <View style={styles.content}>
+      <View style={styles.offset} />
+      {props.mask
         ? (
           <TextInputMask
-            // {...props}
+            {...props}
             ref={ref}
-            type={mask}
-            optionsMask={optionsMask}
-            style={[styles.input, { color: inputColor }]}
-            onChangeText={(text) => onChangeText(text)}
-            value={value}
-            placeholder={placeholder}
-            placeholderTextColor={placeholderTextColor}
+            type={props.mask}
+            optionsMask={props.optionsMask}
+            style={[styles.input, { color: props.inputColor }]}
+            onChangeText={(text) => props.onChangeText(text)}
+            value={props.value}
+            placeholder={props.placeholder}
+            placeholderTextColor={props.placeholderTextColor}
           />
         )
         : (
           <TextInput
-            // {...props}
+            {...props}
             ref={ref}
-            style={[styles.input, { color: inputColor }]}
-            onChangeText={(text) => onChangeText(text)}
-            value={value}
-            placeholder={placeholder}
-            placeholderTextColor={placeholderTextColor}
+            style={[styles.input, { color: props.inputColor }]}
+            onChangeText={(text) => props.onChangeText(text)}
+            value={props.value}
+            placeholder={props.placeholder}
+            placeholderTextColor={props.placeholderTextColor}
           />
         )}
     </View>
-  );
-});
+  </View>
+));
 
 Input.propTypes = {
   onChangeText: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  // error: PropTypes.string,
   mask: PropTypes.string,
   optionsMask: PropTypes.objectOf(PropTypes.object),
   title: PropTypes.string,
-  // onPressClean: PropTypes.func,
-  // iconName: PropTypes.string,
-  // onPressIcon: PropTypes.func,
-  // titleColor: PropTypes.string,
-  // borderColor: PropTypes.string,
   inputColor: PropTypes.string,
-  // inputBackgroundColor: PropTypes.string,
   placeholderTextColor: PropTypes.string,
 };
 
 Input.defaultProps = {
-  // borderColor: '#CCC',
   inputColor: '#000',
-  // inputBackgroundColor: 'transparent',
   placeholder: '',
-  // error: null,
   mask: '',
   optionsMask: {},
   title: '',
-  // titleColor: '#666',
-  // onPressClean: () => { },
-  // iconName: '',
-  // onPressIcon: () => { },
-  placeholderTextColor: '#CCC',
+  placeholderTextColor: '#909090',
 };
 
 

@@ -14,7 +14,17 @@ export default StyleSheet.create({
     marginTop: 20,
   },
   input: {
-    backgroundColor: '#EEE',
     padding: 10,
+    fontSize: fonts.TITLE,
+    fontWeight: 'bold'
+  },
+  content: {
+    borderRadius: 5,
+    overflow: 'hidden',
+    backgroundColor: '#ECECEC',
+  },
+  offset: {
+    height: 5,
+    backgroundColor: '#DDD',
   }
 });
