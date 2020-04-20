@@ -5,7 +5,7 @@ import styles from './styles';
 import Button from '~/components/Button';
 import { colors } from '~/styles';
 
-export default function TypeRegister() {
+export default function TypeRegister({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
@@ -13,6 +13,7 @@ export default function TypeRegister() {
         Na maior parte do tempo, você é um produtor rural, ou um fornecedor de insumos?
       </Text>
       <Button
+        onPress={() => navigation.navigate('RuralRegister')}
         text="Sou Produtor Rural"
       />
       <Button

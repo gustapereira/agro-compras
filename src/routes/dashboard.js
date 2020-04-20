@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { useSelector } from 'react-redux';
 import { View, Image } from 'react-native';
 
 import IconChatEnable from '~/assets/icons/chat-enable.png';
@@ -14,6 +13,7 @@ import IconSettingsEnable from '~/assets/icons/settings-enable.png';
 import IconSettingsDisable from '~/assets/icons/settings-disable.png';
 import { colors } from '~/styles';
 
+import OffersStack from './offersStack';
 
 function Page() {
   return <View />;
@@ -25,34 +25,32 @@ function App() {
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: colors.GREEN,
-        // inactiveTintColor: theme.type === 'light' ? colors.GRAY : colors.GRAY,
-        // showLabel: false,
         style: {
           backgroundColor: '#FFF',
           borderTopWidth: 0,
-          // shadowColor: colors.BLACK,
-          // shadowOffset: { width: 0, height: 0 },
-          // shadowOpacity: 0.1,
-          // shadowRadius: 5,
-          // elevation: 5,
+          shadowColor: colors.BLACK,
+          shadowOffset: { width: 0, height: 0 },
+          shadowOpacity: 0.1,
+          shadowRadius: 5,
+          elevation: 5,
         }
       }}
     >
       <Tab.Screen
-        name="Offer"
+        name="Offers"
         options={{
           title: 'Ofertas',
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused }) => (
             <Image source={focused ? IconSaleEnable : IconSaleDisable} />
           ),
         }}
-        component={Page}
+        component={OffersStack}
       />
       <Tab.Screen
         name="Estimate"
         options={{
           title: 'Orçamentos',
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused }) => (
             <Image source={focused ? IconCoinEnable : IconCoinDisable} />
           ),
         }}
@@ -62,7 +60,7 @@ function App() {
         name="Messages"
         options={{
           title: 'Mennsagens',
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused }) => (
             <Image source={focused ? IconChatEnable : IconChatDisable} />
           ),
         }}
@@ -72,7 +70,7 @@ function App() {
         name="Settings"
         options={{
           title: 'Configurações',
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused }) => (
             <Image source={focused ? IconSettingsEnable : IconSettingsDisable} />
           ),
         }}

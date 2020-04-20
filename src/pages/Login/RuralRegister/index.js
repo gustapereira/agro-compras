@@ -8,7 +8,7 @@ import Button from '~/components/Button';
 import styles from './styles';
 import SelectionItem from '~/components/SelectionItem';
 
-export default function RuralRegister() {
+export default function RuralRegister({ navigation }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -111,9 +111,13 @@ export default function RuralRegister() {
           />
           <Text style={styles.title}>Localização no Mapa</Text>
           <TouchableOpacity style={styles.containerLocation}>
-            <Image style={styles.location} source={{ uri: 'https://khms0.googleapis.com/kh?v=865&hl=pt-BR&x=2942&y=4805&z=13' }} />
+            <Image
+              style={styles.location}
+              source={{ uri: 'https://khms0.googleapis.com/kh?v=865&hl=pt-BR&x=2942&y=4805&z=13' }}
+            />
           </TouchableOpacity>
           <Button
+            onPress={() => navigation.navigate('Dashboard')}
             text="Cadastrar Minha Propriedade"
           />
         </ScrollView>

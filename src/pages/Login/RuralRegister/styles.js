@@ -28,6 +28,8 @@ export default StyleSheet.create({
   },
   containerLocation: {
     height: 200,
+    borderRadius: 10,
+    overflow: 'hidden'
   },
   location: {
     width: null,
