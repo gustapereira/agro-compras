@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Text } from 'react-native';
 
 import styles from './styles';
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -17,6 +17,7 @@ export default function Login() {
         <Text style={styles.buttonText}>Fazer login com Facebook</Text>
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={() => navigation.navigate('TypeRegister')}
         style={[styles.button, styles.buttonAccount]}
       >
         <Text style={styles.buttonText}>Criar uma conta</Text>
