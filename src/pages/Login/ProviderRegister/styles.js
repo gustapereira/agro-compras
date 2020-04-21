@@ -30,8 +30,7 @@ export default StyleSheet.create({
   containerLocation: {
     height: 200,
     borderRadius: 10,
-    overflow: 'hidden',
-    backgroundColor: colors.GREY,
+    overflow: 'hidden'
   },
   location: {
     width: null,

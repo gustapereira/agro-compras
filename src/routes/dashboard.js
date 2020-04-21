@@ -14,6 +14,8 @@ import IconSettingsDisable from '~/assets/icons/settings-disable.png';
 import { colors } from '~/styles';
 
 import OffersStack from './offersStack';
+import BudgetStack from './budgetStack';
+import SettingsStack from './settingsStack';
 
 function Page() {
   return <View />;
@@ -54,7 +56,7 @@ function App() {
             <Image source={focused ? IconCoinEnable : IconCoinDisable} />
           ),
         }}
-        component={Page}
+        component={BudgetStack}
       />
       <Tab.Screen
         name="Messages"
@@ -74,7 +76,7 @@ function App() {
             <Image source={focused ? IconSettingsEnable : IconSettingsDisable} />
           ),
         }}
-        component={Page}
+        component={SettingsStack}
       />
     </Tab.Navigator>
   );

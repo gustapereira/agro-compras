@@ -50,7 +50,6 @@ export default function RuralRegister({ navigation }) {
     setTechnicalManager(newState);
   }
 
-
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : ''} enabled style={{ flex: 1 }}>
@@ -113,7 +112,7 @@ export default function RuralRegister({ navigation }) {
           <TouchableOpacity style={styles.containerLocation}>
             <Image
               style={styles.location}
-              source={{ uri: 'https://khms0.googleapis.com/kh?v=865&hl=pt-BR&x=2942&y=4805&z=13' }}
+              // source={{ uri: 'https://www.google.com/maps/@-16.2918032,-48.8636183,1060m/data=!3m1!1e3' }}
             />
           </TouchableOpacity>
           <Button

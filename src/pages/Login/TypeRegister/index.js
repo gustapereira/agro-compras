@@ -17,6 +17,7 @@ export default function TypeRegister({ navigation }) {
         text="Sou Produtor Rural"
       />
       <Button
+        onPress={() => navigation.navigate('ProviderRegister')}
         text="Sou Fornecedor de Insumos"
         backgroundColor={colors.GREEN_DARK}
       />

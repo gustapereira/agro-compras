@@ -14,11 +14,5 @@ export default StyleSheet.create({
     color: colors.BLACK,
     fontWeight: 'bold',
     textAlign: 'center'
-  },
-  textClique: {
-    fontSize: fonts.TITLE,
-    color: colors.GREEN,
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
+  }
 });
